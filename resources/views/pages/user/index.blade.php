@@ -5,6 +5,9 @@
     <div class="col-md-8 offset-md-2 mx-auto">
         <div class="card">
             <div class="card-body">
+                <div>
+                    <p>Your user code is : {{ $user_code }}</p>
+                </div>
                 <h2 class="card-title">
                     Product List
                 </h2>
