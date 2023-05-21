@@ -5,7 +5,7 @@
     <div class="card">
         <div class="card-body">
             <a href="{{ route('admin.login') }}" class="btn btn-primary">Go to Admin Panel</a>
-            <a href="{{ route('user.home') }}" class="btn btn-secondary">Go to User Panel</a>
+            <a href="{{ route('user.bidding_session.index') }}" class="btn btn-secondary">Go to User Panel</a>
         </div>
     </div>
 </div>

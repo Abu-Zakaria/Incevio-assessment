@@ -3,13 +3,15 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Product;
 use Illuminate\Contracts\View\View;
-use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
     public function index(): View
     {
-        return view('pages.admin.index');
+        $products = Product::latest()->get();
+
+        return view('pages.admin.index', compact('products'));
     }
 }
