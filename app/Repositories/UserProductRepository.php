@@ -18,14 +18,11 @@ class UserProductRepository
             return false;
         }
 
-        if ($product->minimum_bidding_price >= $price) {
+        if ($product->minimum_bidding_price > $price) {
             return false;
         }
 
-        $deadline = Carbon::createFromFormat("Y-m-d H:i:s", $product->deadline);
-        $now = Carbon::now();
-
-        if ($deadline->lessThanOrEqualTo($now)) {
+        if ($product->isExpired()) {
             throw new BidDeadlineReachedException;
         }
 

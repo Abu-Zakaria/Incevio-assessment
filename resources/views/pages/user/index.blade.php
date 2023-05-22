@@ -25,7 +25,7 @@
 
                             <tbody>
                                 @foreach($products as $product)
-                                <tr>
+                                <tr class="@if($product->status == 'done') bg-warning @else bg-info @endif">
                                     <td>
                                         {{ $product->id }}
                                     </td>
@@ -34,7 +34,7 @@
                                     </td>
                                     <td>
                                         @php
-                                        $highest_bid = $product->bids()->orderBy('price', 'desc')->first();
+                                        $highest_bid = $product->highestBid();
                                         @endphp
                                         {{ $highest_bid ? $highest_bid->price : "N/A" }}
                                     </td>

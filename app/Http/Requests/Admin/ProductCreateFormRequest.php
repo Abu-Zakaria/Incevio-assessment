@@ -27,7 +27,7 @@ class ProductCreateFormRequest extends FormRequest
             'title' => "required",
             'minimum_bidding_price' => function ($attribute, $value, $fail) {
                 if ($value == '') return;
-                if (is_integer($value) && $value > 0) return;
+                if (is_numeric($value) && (int)$value > 0) return;
 
                 $fail("The $attribute field is invalid.");
             },
