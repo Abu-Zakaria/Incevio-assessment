@@ -13,7 +13,7 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule): void
     {
         $schedule->command('product_status_update:cron')
-            ->cron("* * * * *");
+            ->everyMinute();
 
         $schedule->command('bidding_session_ending:cron')
             ->everyMinute();
